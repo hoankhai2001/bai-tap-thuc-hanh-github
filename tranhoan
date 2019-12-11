@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<table border="1" cellpadding="10">
+			<tr>
+				<td>Number 1</td>
+				<td><input type="text" id="so_a"></td>
+			</tr>
+			<tr>
+				<td>Number 2</td>
+				<td><input type="text" id="so_b"></td>
+			</tr>
+			<tr>
+				<td>Option</td>
+				<td>
+					<select id="pheptoan">
+						<option value="cong">Cộng</option>
+						<option value="tru">Trừ</option>
+						<option value="nhan">Nhân</option>
+						<option value="chia">Chia</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Result</td>
+				<td>
+					<input type="text" id="ketqua">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" value="TinhToan" onclick="TinhToan()">
+				</td>
+			</tr>
+		</table>
+		<script>
+			function TinhToan() {
+			console.log('bat dau tinh toan');
+			var so_a = document.getElementById('so_a').value;
+			var so_b = document.getElementById('so_b').value;
+			var pheptoan = document.getElementById('pheptoan').value;
+			console.log(so_a);
+			console.log(so_b);
+			console.log(pheptoan);
+			so_a = parseFloat(so_a);
+			so_b = parseFloat(so_b);
+			if(pheptoan == 'cong'){
+				kq = so_a + so_b;
+				document.getElementById('ketqua').value = kq;
+			}else if (pheptoan == 'tru'){
+				kq = so_a - so_b;
+				document.getElementById('ketqua').value = kq;
+			}else if (pheptoan == 'nhan'){
+				kq = so_a * so_b;
+				document.getElementById('ketqua').value = kq;
+			}else if (pheptoan == 'chia') {
+				kq = so_a / so_b;
+				document.getElementById('ketqua').value = kq;
+			}else{
+				alert("Phép toán phải tính chọn trong danh sách");
+			}
+		}
+		</script>
+</body>
+</html>
